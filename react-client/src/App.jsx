@@ -25,6 +25,7 @@ function App() {
         <Route path='/' element={<ProductList/>}/>
         <Route path='/create' element={<ProductForm/>}/>
         <Route path='/edit/:id' element={<ProductForm/>}/>
+        {/* <Routes path='/delete/:id' element={<ProductList/>}/>  */}
       </Routes>
       </BrowserRouter>
 

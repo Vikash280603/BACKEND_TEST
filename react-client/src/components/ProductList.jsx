@@ -20,6 +20,16 @@ const ProductList = () => {
                 <h3>{product.name}</h3>
                 <p>Price: ${product.price}</p>
                 <Link to={`/edit/${product.id}`}>Edit</Link>
+                <button onClick={() => {
+                    fetch(`https://shiny-zebra-wrp54x5jx65935rq7-5195.app.github.dev/Products/?id=${product.id}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            setProducts(products.filter(p => p.id !== product.id));
+                        }
+                    })
+                }}>Delete</button>
                 
             </div>
         ))}
